@@ -24,9 +24,9 @@ export default function Home() {
 
       <div className="absolute w-full bottom-0">
         <div className="flex md:flex-row flex-col md:justify-between md:p-16 p-8">
-          <h1 className="md:text-xl text-md">{host}</h1>
+          <h1 className="md:text-xl text-md opacity-50">{host}</h1>
 
-          <h1 className="md:text-xl text-md">
+          <h1 className="md:text-xl text-md opacity-50">
             Composting today, for tomorrow.
           </h1>
         </div>
