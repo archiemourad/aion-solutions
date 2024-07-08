@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <main>
-      <section>
+      <section className="h-dvh">
         <video
           className="object-cover w-full h-full brightness-50"
           preload="none"
