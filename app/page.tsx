@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-import { useJsApiLoader, GoogleMap } from "@react-google-maps/api";
+import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 
 import CountUp from "react-countup";
 
@@ -19,8 +19,8 @@ export default function Home() {
   const divisor = 1000000;
 
   const center = {
-    lat: -28.061178169258426,
-    lng: 153.36102792800904,
+    lat: -36.9175320111918,
+    lng: 145.24824718298692,
   };
 
   const { isLoaded } = useJsApiLoader({
@@ -74,13 +74,35 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="flex h-[50dvh] justify-center items-center">
+        <div className="flex md:h-[50dvh] h-[75dvh] justify-center items-center">
           {isLoaded ? (
-            <GoogleMap
-              mapContainerClassName="w-full h-full"
-              center={center}
-              zoom={10}
-            />
+            <div className="relative w-full h-full">
+              <div className="absolute flex w-full h-full justify-center items-center lg:space-x-64 md:space-x-32 space-x-8">
+                <div className="flex md:space-x-6 space-x-4">
+                  <h1 className="lg:text-2xl md:text-xl">Location</h1>
+
+                  <h1 className="lg:text-2xl md:text-xl">→</h1>
+                </div>
+
+                <div className="md:max-w-md max-w-48">
+                  <p className="lg:text-lg">
+                    The location of our biofertiliser production plant.
+                  </p>
+
+                  <p className="md:text-xs text-[.5rem] opacity-25">
+                    * Location/marker for illustrative purposes only.
+                  </p>
+                </div>
+              </div>
+
+              <GoogleMap
+                mapContainerClassName="w-full h-full blur-sm hover:blur-none opacity-15 hover:opacity-100 transition duration-100"
+                center={center}
+                zoom={10}
+              >
+                <Marker position={center} />
+              </GoogleMap>
+            </div>
           ) : (
             <HourglassTopRoundedIcon className="animate-spin" />
           )}
