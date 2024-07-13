@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-import { useJsApiLoader, GoogleMap } from "@react-google-maps/api";
+import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 
 import CountUp from "react-countup";
 
@@ -19,8 +19,8 @@ export default function Home() {
   const divisor = 1000000;
 
   const center = {
-    lat: -28.061178169258426,
-    lng: 153.36102792800904,
+    lat: -36.9175320111918,
+    lng: 145.24824718298692,
   };
 
   const { isLoaded } = useJsApiLoader({
@@ -76,11 +76,21 @@ export default function Home() {
       <section>
         <div className="flex h-[50dvh] justify-center items-center">
           {isLoaded ? (
-            <GoogleMap
-              mapContainerClassName="w-full h-full"
-              center={center}
-              zoom={10}
-            />
+            <div className="group relative w-full h-full">
+              <div className="absolute flex w-full h-full justify-center items-center space-x-6 group-hover:space-x-12">
+                <h1 className="md:text-2xl text-xl">Location</h1>
+
+                <h1 className="md:text-2xl text-xl">→</h1>
+              </div>
+
+              <GoogleMap
+                mapContainerClassName="w-full h-full blur-sm hover:blur-none opacity-15 hover:opacity-100 transition duration-100"
+                center={center}
+                zoom={10}
+              >
+                <Marker position={center} />
+              </GoogleMap>
+            </div>
           ) : (
             <HourglassTopRoundedIcon className="animate-spin" />
           )}
