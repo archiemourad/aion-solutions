@@ -74,13 +74,25 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="flex h-[50dvh] justify-center items-center">
+        <div className="flex md:h-[50dvh] h-[75dvh] justify-center items-center">
           {isLoaded ? (
-            <div className="group relative w-full h-full">
-              <div className="absolute flex w-full h-full justify-center items-center space-x-6 group-hover:space-x-12">
-                <h1 className="md:text-2xl text-xl">Location</h1>
+            <div className="relative w-full h-full">
+              <div className="absolute flex w-full h-full justify-center items-center lg:space-x-64 md:space-x-32 space-x-8">
+                <div className="flex md:space-x-6 space-x-4">
+                  <h1 className="lg:text-2xl md:text-xl">Location</h1>
 
-                <h1 className="md:text-2xl text-xl">→</h1>
+                  <h1 className="lg:text-2xl md:text-xl">→</h1>
+                </div>
+
+                <div className="md:max-w-md max-w-48">
+                  <p className="lg:text-lg">
+                    The location of our biofertiliser production plant.
+                  </p>
+
+                  <p className="md:text-xs text-[.5rem] opacity-25">
+                    * Location/marker for illustrative purposes only.
+                  </p>
+                </div>
               </div>
 
               <GoogleMap
