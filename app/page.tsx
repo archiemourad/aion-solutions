@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 
@@ -90,7 +91,7 @@ export default function Home() {
             <div className="flex md:w-1/2 md:justify-normal justify-center items-center">
               <div className="md:p-0 p-10">
                 <div className="flex-col space-y-3">
-                  <p className="text-[.65rem]">PREMIUM</p>
+                  <p className="text-[.65rem]">PRODUCT</p>
 
                   <h1 className="md:text-3xl text-2xl">
                     Premium Biofertiliser
@@ -108,7 +109,12 @@ export default function Home() {
                 </div>
 
                 <button className="text-sm hover:text-black hover:bg-white border rounded-full px-10 py-2 my-5 transition duration-100">
-                  Contact Us
+                  <Link
+                    href="https://mail.google.com/mail/?view=cm&to=mouradarchie@gmail.com"
+                    target="_blank"
+                  >
+                    Contact Us
+                  </Link>
                 </button>
               </div>
             </div>
