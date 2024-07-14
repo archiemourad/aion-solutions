@@ -75,53 +75,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="h-dvh">
-        <div className="flex w-full h-full items-center bg-[url('/img/topography.png')] bg-no-repeat">
-          <div className="flex md:flex-row flex-col">
-            <div className="flex md:w-1/2 justify-center items-center">
-              <Image
-                className="md:w-5/6"
-                src="/img/product.png"
-                width={1732}
-                height={1732}
-                alt="Product"
-              />
-            </div>
-
-            <div className="flex md:w-1/2 md:justify-normal justify-center items-center">
-              <div className="md:p-0 p-10">
-                <div className="flex-col space-y-3">
-                  <p className="text-[.65rem]">PRODUCT</p>
-
-                  <h1 className="md:text-3xl text-2xl">
-                    Premium Biofertiliser
-                  </h1>
-
-                  <p className="md:text-sm text-xs max-w-lg">
-                    Our premium, performant and organic biofertiliser, with
-                    essential growth-promoting microorganisms and nutrients.
-                    Interested?
-                  </p>
-
-                  <p className="md:text-xs text-[.5rem] opacity-25">
-                    * Image/preview for illustrative purposes only.
-                  </p>
-                </div>
-
-                <button className="text-sm hover:text-black hover:bg-white border rounded-full px-10 py-2 my-5 transition duration-100">
-                  <Link
-                    href="https://mail.google.com/mail/?view=cm&to=mouradarchie@gmail.com"
-                    target="_blank"
-                  >
-                    Contact Us
-                  </Link>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="md:h-[50dvh] h-[75dvh]">
         <div className="flex w-full h-full justify-center items-center">
           {isLoaded ? (
@@ -155,6 +108,53 @@ export default function Home() {
           ) : (
             <HourglassTopRoundedIcon className="animate-spin" />
           )}
+        </div>
+      </section>
+
+      <section className="h-dvh">
+        <div className="flex w-full h-full items-center bg-[url('/img/topography.png')] bg-no-repeat">
+          <div className="flex md:flex-row flex-col">
+            <div className="flex md:w-1/2 justify-center items-center">
+              <Image
+                className="md:w-5/6"
+                src="/img/product.png"
+                width={1732}
+                height={1732}
+                alt="Product"
+              />
+            </div>
+
+            <div className="flex md:w-1/2 md:justify-normal justify-center items-center">
+              <div className="md:p-0 p-10">
+                <div className="flex-col space-y-3">
+                  <p className="text-[.65rem] opacity-50">PRODUCT</p>
+
+                  <h1 className="md:text-3xl text-2xl">
+                    Premium Biofertiliser
+                  </h1>
+
+                  <p className="md:text-sm text-xs max-w-lg">
+                    Our premium, performant and organic biofertiliser, with
+                    essential growth-promoting microorganisms and nutrients.
+                    Interested?
+                  </p>
+
+                  <p className="md:text-xs text-[.5rem] opacity-25">
+                    * Image/preview for illustrative purposes only.
+                  </p>
+                </div>
+
+                <button className="text-sm hover:text-black hover:bg-white border rounded-full px-10 py-2 my-5 transition duration-100">
+                  <Link
+                    href="https://mail.google.com/mail/?view=cm&to=mouradarchie@gmail.com"
+                    target="_blank"
+                  >
+                    Contact Us
+                  </Link>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
