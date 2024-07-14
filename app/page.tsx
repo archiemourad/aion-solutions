@@ -17,13 +17,276 @@ export default function Home() {
     setHost(window.location.host);
   }, []);
 
-  const converted = 100000000;
-  const divisor = 1000000;
+  const [converted, divisor] = [100000000, 1000000];
 
-  const center = {
+  const mapCenter = {
     lat: -36.9175320111918,
     lng: 145.24824718298692,
   };
+
+  const mapTheme = [
+    {
+      featureType: "all",
+      elementType: "labels",
+      stylers: [
+        {
+          visibility: "on",
+        },
+      ],
+    },
+    {
+      featureType: "all",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          saturation: 36,
+        },
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 40,
+        },
+      ],
+    },
+    {
+      featureType: "all",
+      elementType: "labels.text.stroke",
+      stylers: [
+        {
+          visibility: "on",
+        },
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 16,
+        },
+      ],
+    },
+    {
+      featureType: "all",
+      elementType: "labels.icon",
+      stylers: [
+        {
+          visibility: "off",
+        },
+      ],
+    },
+    {
+      featureType: "administrative",
+      elementType: "geometry.fill",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 20,
+        },
+      ],
+    },
+    {
+      featureType: "administrative",
+      elementType: "geometry.stroke",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 17,
+        },
+        {
+          weight: 1.2,
+        },
+      ],
+    },
+    {
+      featureType: "administrative.country",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#319e4e",
+        },
+      ],
+    },
+    {
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#c4c4c4",
+        },
+      ],
+    },
+    {
+      featureType: "administrative.neighborhood",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#319e4e",
+        },
+      ],
+    },
+    {
+      featureType: "landscape",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 20,
+        },
+      ],
+    },
+    {
+      featureType: "poi",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 21,
+        },
+        {
+          visibility: "on",
+        },
+      ],
+    },
+    {
+      featureType: "poi.business",
+      elementType: "geometry",
+      stylers: [
+        {
+          visibility: "on",
+        },
+      ],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.fill",
+      stylers: [
+        {
+          color: "#319e4e",
+        },
+        {
+          lightness: "0",
+        },
+      ],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [
+        {
+          visibility: "off",
+        },
+      ],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#ffffff",
+        },
+      ],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "labels.text.stroke",
+      stylers: [
+        {
+          color: "#319e4e",
+        },
+      ],
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 18,
+        },
+      ],
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "geometry.fill",
+      stylers: [
+        {
+          color: "#575757",
+        },
+      ],
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#ffffff",
+        },
+      ],
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "labels.text.stroke",
+      stylers: [
+        {
+          color: "#2c2c2c",
+        },
+      ],
+    },
+    {
+      featureType: "road.local",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 16,
+        },
+      ],
+    },
+    {
+      featureType: "road.local",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#999999",
+        },
+      ],
+    },
+    {
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 19,
+        },
+      ],
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#000000",
+        },
+        {
+          lightness: 17,
+        },
+      ],
+    },
+  ];
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "?",
@@ -99,10 +362,11 @@ export default function Home() {
 
               <GoogleMap
                 mapContainerClassName="w-full h-full blur-sm hover:blur-none opacity-15 hover:opacity-100 transition duration-100"
-                center={center}
+                options={{ styles: mapTheme }}
+                center={mapCenter}
                 zoom={10}
               >
-                <Marker position={center} />
+                <Marker position={mapCenter} />
               </GoogleMap>
             </div>
           ) : (
