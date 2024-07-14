@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 
@@ -43,7 +44,7 @@ export default function Home() {
 
         <div className="absolute top-0 w-full h-full">
           <div className="flex w-full h-full justify-center items-center">
-            <div className="flex flex-col md:space-y-2 space-y-1">
+            <div className="flex-col md:space-y-2 space-y-1">
               <div className="flex items-center md:space-x-8 space-x-4">
                 <CountUp
                   className="md:text-6xl text-4xl"
@@ -63,7 +64,7 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-0 w-full">
-          <div className="flex w-full md:flex-row flex-col md:justify-between md:p-16 p-8">
+          <div className="flex md:flex-row flex-col w-full md:justify-between md:p-16 p-8">
             <h1 className="md:text-lg text-sm opacity-50">{host}</h1>
 
             <h1 className="md:text-lg text-sm opacity-50">
@@ -73,8 +74,50 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <div className="flex md:h-[50dvh] h-[75dvh] justify-center items-center">
+      <section className="h-dvh">
+        <div className="flex w-full h-full items-center bg-[url('/img/topography.png')] bg-no-repeat">
+          <div className="flex md:flex-row flex-col">
+            <div className="flex md:w-1/2 justify-center items-center">
+              <Image
+                className="md:w-5/6"
+                src="/img/product.png"
+                width={1732}
+                height={1732}
+                alt="Product"
+              />
+            </div>
+
+            <div className="flex md:w-1/2 md:justify-normal justify-center items-center">
+              <div className="md:p-0 p-10">
+                <div className="flex-col space-y-3">
+                  <p className="text-[.65rem]">PREMIUM</p>
+
+                  <h1 className="md:text-3xl text-2xl">
+                    Premium Biofertiliser
+                  </h1>
+
+                  <p className="md:text-sm text-xs max-w-lg">
+                    Our premium, performant and organic biofertiliser, with
+                    essential growth-promoting microorganisms and nutrients.
+                    Interested?
+                  </p>
+
+                  <p className="md:text-xs text-[.5rem] opacity-25">
+                    * Image/preview for illustrative purposes only.
+                  </p>
+                </div>
+
+                <button className="text-sm hover:text-black hover:bg-white border rounded-full px-10 py-2 my-5 transition duration-100">
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="md:h-[50dvh] h-[75dvh]">
+        <div className="flex w-full h-full justify-center items-center">
           {isLoaded ? (
             <div className="relative w-full h-full">
               <div className="absolute flex w-full h-full justify-center items-center lg:space-x-64 md:space-x-32 space-x-8">
