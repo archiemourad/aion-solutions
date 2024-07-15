@@ -361,7 +361,7 @@ export default function Home() {
               </div>
 
               <GoogleMap
-                mapContainerClassName="w-full h-full blur-sm hover:blur-none opacity-15 hover:opacity-100 transition duration-100"
+                mapContainerClassName="w-full h-full blur-sm hover:blur-none opacity-15 hover:opacity-100 transition duration-75"
                 options={{ styles: mapTheme }}
                 center={mapCenter}
                 zoom={10}
@@ -408,14 +408,14 @@ export default function Home() {
                   </p>
                 </div>
 
-                <button className="text-sm hover:text-black hover:bg-white border rounded-full px-10 py-2 my-5 transition duration-100">
-                  <Link
-                    href="https://mail.google.com/mail/?view=cm&to=mouradarchie@gmail.com"
-                    target="_blank"
-                  >
+                <Link
+                  href="https://mail.google.com/mail/?view=cm&to=mouradarchie@gmail.com"
+                  target="_blank"
+                >
+                  <button className="text-sm hover:text-black hover:bg-white border rounded-full px-10 py-2 my-5 transition duration-75">
                     Contact Us
-                  </Link>
-                </button>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
